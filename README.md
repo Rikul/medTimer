@@ -84,6 +84,9 @@ MedTimer is a free app without adds.
 
 ## Documentation
 
+For developers looking to understand the codebase, see the [architecture documentation](doc/Architecture.md)
+which provides a comprehensive overview of the app's structure, components, and design patterns.
+
 See the [use cases documentation](doc/UseCases.md) for more details on how to use the app and
 the specific use cases it can satisfy.
 

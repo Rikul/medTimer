@@ -16,6 +16,7 @@ import androidx.test.uiautomator.UiSelector;
 
 import com.adevinta.android.barista.rule.BaristaRule;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -103,6 +104,15 @@ public abstract class BaseTestHelper {
             }
         } catch (UiObjectNotFoundException e) {
             device.pressBack();
+        }
+    }
+
+    @After
+    public void teardown() {
+        try {
+            baristaRule.getActivityTestRule().finishActivity();
+        } catch (Exception e) {
+            // Activity may already be finished, ignore
         }
     }
 

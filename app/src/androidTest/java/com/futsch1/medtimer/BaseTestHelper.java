@@ -109,7 +109,11 @@ public abstract class BaseTestHelper {
 
     @After
     public void teardown() {
-        baristaRule.getActivityTestRule().finishActivity();
+        try {
+            baristaRule.getActivityTestRule().finishActivity();
+        } catch (Exception e) {
+            // Activity may already be finished, ignore
+        }
     }
 
     protected void internalAssert(boolean b) {
